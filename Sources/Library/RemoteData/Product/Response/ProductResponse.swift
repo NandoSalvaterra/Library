@@ -7,6 +7,8 @@
 
 import Foundation
 
+/// Represents a `Product` that can be retrieved from internet. It implements the `Codable` protocol in order to be decoded from
+/// data coming from a backend.
 class ProductResponse: Codable {
 
     var id: String?

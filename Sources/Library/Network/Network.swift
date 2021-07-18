@@ -8,6 +8,9 @@
 import Foundation
 import Combine
 
+/// A Singleton to make HTTP Calls without any Library dependency,
+///
+/// It can be used with `Generics` to know what type of data it can return.
 class Network {
 
     static let shared = Network()

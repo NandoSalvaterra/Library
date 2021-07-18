@@ -8,6 +8,7 @@
 import Foundation
 import Combine
 
+/// Use Case Protocol responsible for fetching products .
 protocol GetProductsUseCaseProtocol {
 
     func execute() -> AnyPublisher<[LibraryProduct], LibraryError>

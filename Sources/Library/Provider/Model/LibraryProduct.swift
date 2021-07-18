@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Represents a Product object  to be consumed.
 public class LibraryProduct {
 
     public var id: String?

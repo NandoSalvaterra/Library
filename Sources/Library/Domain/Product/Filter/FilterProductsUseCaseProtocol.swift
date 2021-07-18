@@ -8,6 +8,7 @@
 import Foundation
 import Combine
 
+/// Use Case Protocol responsible for filter products by lowest or highest prices.
 protocol FilterProductsUseCaseProtocol {
 
     func execute(cost: ProductCost) -> AnyPublisher<LibraryProduct, LibraryError>

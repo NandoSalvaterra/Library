@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Represents  the most used HTTP methods.
 public enum HTTPMethod: String {
 
     case get = "GET"

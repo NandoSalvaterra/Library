@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// The kind of errors that the `Network` might return.
 enum NetworkError: Error {
     case invalidURL(_ error: String)
     case invalidJSON(_ error: String)

@@ -8,6 +8,7 @@
 import Foundation
 import Combine
 
+/// Repository Protocol  responsible for defiine all methods related to product feature.
 protocol ProductRepositoryProtocol {
 
     func getProducts() -> AnyPublisher<[LibraryProduct], LibraryError>

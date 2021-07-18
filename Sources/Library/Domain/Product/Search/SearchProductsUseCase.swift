@@ -8,6 +8,7 @@
 import Foundation
 import Combine
 
+/// Use Case  responsible for searching products using price.
 class SearchProductsUseCase: SearchProductsUseCaseProtocol {
 
     let repository: ProductRepositoryProtocol

@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Represents a `Product` that can be saved or retrieved from database. It implements the `Comparable` protocol in order to filter `Products` by price.
 class ProductRecord: Codable, Comparable {
 
     var id: String?

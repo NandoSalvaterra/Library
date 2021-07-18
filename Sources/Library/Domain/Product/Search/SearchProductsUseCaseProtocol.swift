@@ -8,6 +8,7 @@
 import Foundation
 import Combine
 
+/// Use Case Protocol  responsible for searching products using price.
 protocol SearchProductsUseCaseProtocol {
 
     func execute(price: Double) -> AnyPublisher<[LibraryProduct], LibraryError>

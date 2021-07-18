@@ -8,6 +8,7 @@
 import Foundation
 import Combine
 
+/// Use Case  responsible for fetching products .
 class GetProductsUseCase: GetProductsUseCaseProtocol {
 
     let repository: ProductRepositoryProtocol
