@@ -9,7 +9,7 @@
         func testExample() {
             let expect = expectation(description: "TESTE")
 
-            ProductRemoteData().getProducts().sink { completion in
+            ProductRepository().getProducts().sink { completion in
                 switch completion {
                 case .finished:
                     break

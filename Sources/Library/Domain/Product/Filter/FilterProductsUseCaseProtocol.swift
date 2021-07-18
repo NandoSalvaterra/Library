@@ -10,5 +10,5 @@ import Combine
 
 protocol FilterProductsUseCaseProtocol {
 
-    func execute(cost: ProductCost) -> AnyPublisher<GloboProduct, LibraryError>
+    func execute(cost: ProductCost) -> AnyPublisher<LibraryProduct, LibraryError>
 }

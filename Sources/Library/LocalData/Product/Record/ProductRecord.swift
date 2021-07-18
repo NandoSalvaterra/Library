@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ProductRecord: Codable {
+class ProductRecord: Codable, Comparable {
 
     var id: String?
     var name: String?
@@ -16,6 +16,24 @@ class ProductRecord: Codable {
     var price: String?
     var color: String?
     var created: Date?
+
+    init(response: ProductResponse) {
+        self.id = response.id
+        self.name = response.name
+        self.information = response.information
+        self.imageURL = response.imageURL
+        self.price = response.price
+        self.color = response.color
+        self.created = response.created
+    }
+
+    static func == (lhs: ProductRecord, rhs: ProductRecord) -> Bool {
+        return lhs.id == rhs.id
+    }
+
+    static func < (lhs: ProductRecord, rhs: ProductRecord) -> Bool {
+        return Double(lhs.price ?? "") ?? 0 < Double(rhs.price ?? "") ?? 0
+    }
 
     private enum CodingKeys: String, CodingKey {
         case id = "id"

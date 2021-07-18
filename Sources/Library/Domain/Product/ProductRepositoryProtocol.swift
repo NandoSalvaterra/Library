@@ -10,4 +10,7 @@ import Combine
 
 protocol ProductRepositoryProtocol {
 
+    func getProducts() -> AnyPublisher<[LibraryProduct], LibraryError>
+    func searchProducts(price: Double) -> AnyPublisher<[LibraryProduct], LibraryError>
+    func filterProducts(cost: ProductCost) -> AnyPublisher<LibraryProduct, LibraryError>
 }

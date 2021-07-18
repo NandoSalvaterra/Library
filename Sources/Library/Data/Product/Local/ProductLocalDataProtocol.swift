@@ -10,5 +10,8 @@ import Combine
 
 protocol ProductLocalDataProtocol {
 
-    func saveProducts()
+    func saveProducts(_ products: [ProductRecord]) -> AnyPublisher<Bool, LocalDataError>
+    func getProducts() -> AnyPublisher<[ProductRecord], LocalDataError>
+    func filterProducts(cost: ProductCost) -> AnyPublisher<ProductRecord, LocalDataError>
+    func searchProducts(price: Double) -> AnyPublisher<[ProductRecord], LocalDataError>
 }

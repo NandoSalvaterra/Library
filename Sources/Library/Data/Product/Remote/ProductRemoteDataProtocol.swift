@@ -11,7 +11,6 @@ import Combine
 protocol ProductRemoteDataProtocol {
 
     var url: String { get set }
-    var network: Network { get set }
 
     func getProducts() -> AnyPublisher<[ProductResponse], NetworkError>
 }

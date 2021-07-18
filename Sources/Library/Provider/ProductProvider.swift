@@ -6,7 +6,22 @@
 //
 
 import Foundation
+import Combine
 
 class ProductProvider {
-    
+
+
+    let getProductsUseCase: GetProductsUseCaseProtocol
+    let searchProductsUseCase: SearchProductsUseCaseProtocol
+    let filterProductsUseCase: FilterProductsUseCaseProtocol
+
+    init() {
+        self.getProductsUseCase = GetProductsUseCase()
+        self.searchProductsUseCase = SearchProductsUseCase()
+        self.filterProductsUseCase = FilterProductsUseCase()
+    }
+
+    func getProducts() ->  AnyPublisher<[LibraryProduct], LibraryError> {
+        return getProductsUseCase.execute()
+    }
 }
