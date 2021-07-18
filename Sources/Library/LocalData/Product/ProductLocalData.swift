@@ -19,7 +19,7 @@ class ProductLocalData: ProductLocalDataProtocol {
                 do {
                     let encoder = JSONEncoder()
                     encoder.dateEncodingStrategy = .formatted(Formatter.iso8601)
-                    let encoded = try JSONEncoder().encode(products)
+                    let encoded = try encoder.encode(products)
                     try encoded.write(to: pathWithFilename)
                     promise(.success(true))
                 } catch let error {
@@ -50,13 +50,20 @@ class ProductLocalData: ProductLocalDataProtocol {
         return getProducts()
             .map { products in
                 return products.filter { product in
-                    return product.price == String(price)
+                    return product.price == String(format: "%.2f", price)
                 }
             }.eraseToAnyPublisher()
     }
 
     func filterProducts(cost: ProductCost) -> AnyPublisher<ProductRecord, LocalDataError> {
         return getProducts()
-            .map { $0.max()! }.eraseToAnyPublisher()
+            .map { records in
+                switch cost {
+                case .highest:
+                    return records.max()!
+                case .lowest:
+                    return records.min()!
+                }
+            }.eraseToAnyPublisher()
     }
 }

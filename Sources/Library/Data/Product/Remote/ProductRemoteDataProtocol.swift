@@ -12,5 +12,5 @@ protocol ProductRemoteDataProtocol {
 
     var url: String { get set }
 
-    func getProducts() -> AnyPublisher<[ProductResponse], NetworkError>
+    func getProducts() -> AnyPublisher<[ProductResponse], RemoteDataError>
 }

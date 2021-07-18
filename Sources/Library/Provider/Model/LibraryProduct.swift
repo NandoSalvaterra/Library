@@ -7,15 +7,15 @@
 
 import Foundation
 
-class LibraryProduct {
+public class LibraryProduct {
 
-    var id: String?
-    var name: String?
-    var information: String?
-    var imageURL: String?
-    var price: String?
-    var color: String?
-    var created: Date?
+    public var id: String?
+    public var name: String?
+    public var information: String?
+    public var imageURL: String?
+    public var price: String?
+    public var color: String?
+    public var created: Date?
 
     init(record: ProductRecord) {
         self.id = record.id

@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum LibraryError: Error {
+public enum LibraryError: Error {
 
     case localError(_ error: Error)
     case remoteError(_ error: Error)

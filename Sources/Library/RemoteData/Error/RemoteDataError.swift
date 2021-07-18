@@ -8,5 +8,6 @@
 import Foundation
 
 enum RemoteDataError: Error {
-    
+
+    case networkError(_ error: Error)
 }

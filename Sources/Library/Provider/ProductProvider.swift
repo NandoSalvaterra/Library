@@ -8,20 +8,27 @@
 import Foundation
 import Combine
 
-class ProductProvider {
-
+public class ProductProvider {
 
     let getProductsUseCase: GetProductsUseCaseProtocol
     let searchProductsUseCase: SearchProductsUseCaseProtocol
     let filterProductsUseCase: FilterProductsUseCaseProtocol
 
-    init() {
+    public init() {
         self.getProductsUseCase = GetProductsUseCase()
         self.searchProductsUseCase = SearchProductsUseCase()
         self.filterProductsUseCase = FilterProductsUseCase()
     }
 
-    func getProducts() ->  AnyPublisher<[LibraryProduct], LibraryError> {
+    public func getProducts() -> AnyPublisher<[LibraryProduct], LibraryError> {
         return getProductsUseCase.execute()
+    }
+
+    public func searchProduts(price: Double) -> AnyPublisher<[LibraryProduct], LibraryError> {
+        return searchProductsUseCase.execute(price: price)
+    }
+
+    public func filterProducts(cost: ProductCost) -> AnyPublisher<LibraryProduct, LibraryError> {
+        return filterProducts(cost: cost)
     }
 }

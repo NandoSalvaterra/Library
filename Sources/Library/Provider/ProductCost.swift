@@ -7,8 +7,7 @@
 
 import Foundation
 
-enum ProductCost {
-
+public enum ProductCost {
     case lowest
     case highest
 }
