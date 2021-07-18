@@ -10,4 +10,11 @@ import Combine
 
 class ProductRepository: ProductRepositoryProtocol {
 
+    let remoteData: ProductRemoteDataProtocol
+    let localData: ProductLocalDataProtocol
+
+
+    init() {
+
+    }
 }

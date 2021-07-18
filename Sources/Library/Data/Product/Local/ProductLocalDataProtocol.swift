@@ -9,5 +9,6 @@ import Foundation
 import Combine
 
 protocol ProductLocalDataProtocol {
-    
+
+    func saveProducts()
 }
