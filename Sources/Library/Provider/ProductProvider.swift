@@ -39,6 +39,6 @@ public class ProductProvider {
     /// Returns a Publisher that will emit values with a single product of lowest or highest price. The value ca also be an error.
     /// - Returns: A Publisher that will emit an `LibraryProduct` object or an error of `LibraryError` type.
     public func filterProducts(cost: ProductCost) -> AnyPublisher<LibraryProduct, LibraryError> {
-        return filterProducts(cost: cost)
+        return filterProductsUseCase.execute(cost: cost)
     }
 }
